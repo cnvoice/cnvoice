@@ -34,21 +34,25 @@
         });
     </script>
 
-    <title>Hello, world!</title>
+    <title>中文乱序生成器</title>
   </head>
   <body>
     <div class="container">
-      <h2>中文乱序生成器</h2>
-      <form id="form" action="/encrypt" method="post">
+      <h1>中文乱序生成器</h1>
+      <form id="form" action="/encrypt" method="post" style="margin-top: 25px">
         <div class="form-group md-form mb-4">
-            <textarea id="content" class="md-textarea form-control" rows="6" placeholder="请输入内容..." required></textarea>
+            <textarea id="content" class="md-textarea form-control" rows="8" placeholder="请输入内容..." required>一个健康的社会不该只有一种声音</textarea>
         </div>
         <button type="submit" class="btn btn-default">生成</button>
       </form>
 
       <div class="mb-4" style="margin-top: 15px">
-        <textarea id="encrypted_content" class="md-textarea form-control" rows="6" readonly></textarea>
-      </div>
+        <textarea id="encrypted_content" class="md-textarea form-control" rows="8" readonly></textarea>
+      </div>      
+        <footer style="margin-top: 15px">
+            <p>Developed by: <a href="https://www.douban.com/people/gardenia22/">
+      Gardenia</a></p>
+        </footer>      
     </div>
   </body>
 </html>
