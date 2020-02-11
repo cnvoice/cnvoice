@@ -30,8 +30,22 @@
                         },
                      });
 
-            });
+            });         
         });
+        function copyText() {
+            /* Get the text field */
+            var copyText = document.getElementById("encrypted_content");
+
+            /* Select the text field */
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+            /* Copy the text inside the text field */
+            document.execCommand("copy");
+
+            /* Alert the copied text */
+            alert("文本已复制");
+          }           
     </script>
 
     <title>中文乱序生成器</title>
@@ -43,11 +57,14 @@
         <div class="form-group md-form mb-4">
             <textarea id="content" class="md-textarea form-control" rows="8" placeholder="请输入内容..." required>一个健康的社会不该只有一种声音</textarea>
         </div>
-        <button type="submit" class="btn btn-default">生成</button>
+        <button type="submit" class="btn btn-default">生成</button>        
       </form>
 
-      <div class="mb-4" style="margin-top: 15px">
-        <textarea id="encrypted_content" class="md-textarea form-control" rows="8" readonly></textarea>
+      <div class="mb-4" style="margin-top: 15px">        
+        <div  class="form-group md-form mb-4">
+          <textarea id="encrypted_content" class="md-textarea form-control" rows="8"></textarea>
+        </div>
+        <button type="copy_text" class="btn btn-default" onclick="copyText()">复制</button>
       </div>      
         <footer style="margin-top: 15px">
             <p>Developed by: <a href="https://www.douban.com/people/gardenia22/">
