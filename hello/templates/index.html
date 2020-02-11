@@ -8,7 +8,7 @@
     <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script>
         $(function() {
@@ -60,7 +60,7 @@
   </head>
   <body>
     <div class="container">
-      <h1><span><img src="{% static 'favicon.png' %}" height="40" style="padding-bottom: 7px;margin-right: 7px"/></span><span></span>中乱文序成生器</h1>
+      <h2><span><img src="{% static 'favicon.png' %}" height="40" style="padding-bottom: 7px;margin-right: 7px"/></span><span></span>中乱文序成生器</h2>
       <form id="form" action="/encrypt" method="post" style="margin-top: 25px">
         <div class="form-group md-form mb-4">
             <textarea id="content" class="md-textarea form-control" rows="6" placeholder="请输入内容..." required>一个健康的社会不该只有一种声音</textarea>
@@ -79,8 +79,10 @@
           <button type="button" class="close" data-dismiss="alert">x</button>
           文本已复制 
         </div>         
-      </div>      
+      </div> 
         <footer style="margin-top: 15px">
+          <p>推荐使用更方便稳定的<a href="https://www.tampermonkey.net/"> 
+      油猴</a> <a href="https://bit.ly/39uUAW5">豆瓣插件</a></p>
             <p>Developed by <a href="https://www.douban.com/people/gardenia22/">
       Gardenia</a></p>
         </footer>      
