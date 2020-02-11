@@ -38,21 +38,30 @@
 
             /* Select the text field */
             copyText.select();
-            copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+            // copyText.setSelectionRange(0, 99999); /*For mobile devices*/
 
             /* Copy the text inside the text field */
             document.execCommand("copy");
 
-            /* Alert the copied text */
-            alert("文本已复制");
-          }           
+          }     
+          $(document).ready(function() {
+            $("#success-alert").hide();
+            $("#copy_text").click(function showAlert() {
+              $("#success-alert").fadeTo(2000, 500).slideUp(500, function() {
+                $("#success-alert").slideUp(500);
+              });
+            });
+          });
+          $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
+              $("#success-alert").slideUp(500);
+          });               
     </script>
 
-    <title>中文乱序生成器</title>
+    <title>中乱文序成生器</title>
   </head>
   <body>
     <div class="container">
-      <h1>中文乱序生成器</h1>
+      <h1>中乱文序成生器</h1>
       <form id="form" action="/encrypt" method="post" style="margin-top: 25px">
         <div class="form-group md-form mb-4">
             <textarea id="content" class="md-textarea form-control" rows="8" placeholder="请输入内容..." required>一个健康的社会不该只有一种声音</textarea>
@@ -62,12 +71,16 @@
 
       <div class="mb-4" style="margin-top: 15px">        
         <div  class="form-group md-form mb-4">
-          <textarea id="encrypted_content" class="md-textarea form-control" rows="8"></textarea>
-        </div>
-        <button type="copy_text" class="btn btn-default" onclick="copyText()">复制</button>
+          <textarea id="encrypted_content" class="md-textarea form-control" rows="8" readonly></textarea>
+        </div>       
+        <button id = "copy_text" type="copy_text" class="btn btn-default" onclick="copyText()">复制</button>
+        <div class="alert alert-success" id="success-alert">
+          <button type="button" class="close" data-dismiss="alert">x</button>
+          文本已复制 
+        </div>         
       </div>      
         <footer style="margin-top: 15px">
-            <p>Developed by: <a href="https://www.douban.com/people/gardenia22/">
+            <p>Developed by <a href="https://www.douban.com/people/gardenia22/">
       Gardenia</a></p>
         </footer>      
     </div>
