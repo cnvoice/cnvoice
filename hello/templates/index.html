@@ -1,8 +1,11 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -57,7 +60,7 @@
   </head>
   <body>
     <div class="container">
-      <h1>中乱文序成生器</h1>
+      <h1><span><img src="{% static 'favicon.png' %}" height="40" style="padding-bottom: 7px;margin-right: 7px"/></span><span></span>中乱文序成生器</h1>
       <form id="form" action="/encrypt" method="post" style="margin-top: 25px">
         <div class="form-group md-form mb-4">
             <textarea id="content" class="md-textarea form-control" rows="6" placeholder="请输入内容..." required>一个健康的社会不该只有一种声音</textarea>
