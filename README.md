@@ -1,8 +1,15 @@
-# Python: Getting Started
+## Deploying to Heroku
 
-A barebones Django app, which can easily be deployed to Heroku.
+```sh
+$ heroku create
+$ git push heroku master
 
-This application can be deployed follow by [Getting Started with Python on Heroku](https://devcenter.heroku.com/articles/getting-started-with-python) article - check it out.
+$ heroku open
+```
+or
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
 
 ## Running Locally
 
@@ -19,18 +26,6 @@ $ heroku local
 ```
 
 Your app should now be running on [localhost:5000](http://localhost:5000/).
-
-## Deploying to Heroku
-
-```sh
-$ heroku create
-$ git push heroku master
-
-$ heroku open
-```
-or
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 ## Documentation
 
