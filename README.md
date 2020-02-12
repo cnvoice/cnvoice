@@ -1,4 +1,4 @@
-## Deploying to Heroku with one click
+## Deploying to Heroku With One Click
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
