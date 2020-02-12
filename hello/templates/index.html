@@ -25,7 +25,7 @@
                         dataType: "json",
                         success: function(data)
                         {
-                            $("#encrypted_content").text(data.encrypted_content);
+                            $("#encrypted_content").text(data.encrypted_content + '\t\t由 bit点ly/cnvoice 生成');
                         },
                         error: function (data) {
                             console.log('An error occurred.');
