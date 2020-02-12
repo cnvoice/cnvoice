@@ -15,11 +15,6 @@ $ cd cnvoice
 $ python3 -m venv cnvoice
 $ pip install -r requirements.txt
 
-$ createdb cnvoice
-
-$ python manage.py migrate
-$ python manage.py collectstatic
-
 $ heroku local
 ```
 
@@ -31,7 +26,6 @@ Your app should now be running on [localhost:5000](http://localhost:5000/).
 $ heroku create
 $ git push heroku master
 
-$ heroku run python manage.py migrate
 $ heroku open
 ```
 or
