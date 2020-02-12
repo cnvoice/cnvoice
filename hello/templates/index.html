@@ -4,58 +4,50 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script>
-        $(function() {
-            $("form").submit(function(e) {
-                e.preventDefault();
-
-                var form = $(this);
-                var type = form.attr('method');
-                var url = form.attr('action');
-                $.ajax({
-                        type: type,
-                        url: url,
-                        data: {content:$("#content").val(), csrfmiddlewaretoken: '{{ csrf_token }}'},
-                        dataType: "json",
-                        success: function(data)
-                        {
-                            $("#encrypted_content").text(data.encrypted_content + '\t\t由 bit点ly/cnvoice 生成');
-                        },
-                        error: function (data) {
-                            console.log('An error occurred.');
-                            console.log(data);
-                        },
-                     });
-
-            });         
-        });
-        function copyText() {
-            /* Get the text field */
-            var copyText = document.getElementById("encrypted_content");
-
-            /* Select the text field */
-            copyText.select();
-            // copyText.setSelectionRange(0, 99999); /*For mobile devices*/
-
-            /* Copy the text inside the text field */
-            document.execCommand("copy");
-
-          }     
-          $(document).ready(function() {
-            $("#copy_text").click(function showAlert() {
-              $("#success-alert").fadeTo(2000, 500).slideUp(500, function() {
-                $("#success-alert").slideUp(500);
-              });
-            });
-          });              
+    $(function() {
+    $("form").submit(function(e) {
+    e.preventDefault();
+    var form = $(this);
+    var type = form.attr('method');
+    var url = form.attr('action');
+    $.ajax({
+    type: type,
+    url: url,
+    data: {content:$("#content").val(), csrfmiddlewaretoken: '{{ csrf_token }}'},
+    dataType: "json",
+    success: function(data)
+    {
+    $("#encrypted_content").text(data.encrypted_content + '\t\t由 bit点ly/cnvoice 生成');
+    },
+    error: function (data) {
+    console.log('An error occurred.');
+    console.log(data);
+    },
+    });
+    });
+    });
+    function copyText() {
+    /* Get the text field */
+    var copyText = document.getElementById("encrypted_content");
+    /* Select the text field */
+    copyText.select();
+    // copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+    /* Copy the text inside the text field */
+    document.execCommand("copy");
+    }
+    $(document).ready(function() {
+    $("#copy_text").click(function showAlert() {
+    $("#success-alert").fadeTo(2000, 500).slideUp(500, function() {
+    $("#success-alert").slideUp(500);
+    });
+    });
+    });
     </script>
-
     <title>中乱文序成生器</title>
   </head>
   <body>
@@ -63,32 +55,31 @@
       <h2><span><img src="{% static 'favicon.png' %}" height="40" style="padding-bottom: 7px;margin-right: 7px"/></span><span></span>中乱文序成生器</h2>
       <form id="form" action="/encrypt" method="post" style="margin-top: 25px">
         <div class="form-group md-form mb-4">
-            <textarea id="content" class="md-textarea form-control" rows="6" placeholder="请输入内容..." required>一个健康的社会不该只有一种声音</textarea>
+          <textarea id="content" class="md-textarea form-control" rows="6" placeholder="请输入内容..." required>一个健康的社会不该只有一种声音</textarea>
         </div>
-        <button type="submit" class="btn btn-default">生成</button>        
+        <button type="submit" class="btn btn-default">生成</button>
       </form>
-
-      <div class="mb-4" style="margin-top: 15px">        
+      <div class="mb-4" style="margin-top: 15px">
         <div  class="form-group md-form mb-4">
           <textarea id="encrypted_content" class="md-textarea form-control" rows="6" readonly></textarea>
-        </div>      
-        <div  class="form-group md-form mb-4"> 
-        <button id = "copy_text" type="copy_text" class="btn btn-default" onclick="copyText()">复制</button>
+        </div>
+        <div  class="form-group md-form mb-4">
+          <button id = "copy_text" type="copy_text" class="btn btn-default" onclick="copyText()">复制</button>
         </div>
         <div class="alert alert-success" id="success-alert" style="display:none;">
           <button type="button" class="close" data-dismiss="alert">x</button>
-          文本已复制 
-        </div>         
-      </div> 
-        <footer style="margin-top: 15px">
-          <p>推荐使用更方便稳定的<a href="https://www.tampermonkey.net/"> 
-      油猴</a> <a href="https://bit.ly/39uUAW5">豆瓣插件</a> by <a href="https://www.douban.com/people/MoNoMilky/"> 
-      竹子哟竹子✨ </a></p>
-      <p> 其他中文工具 <a href="http://mix.niin.cc/">混淆一下</a> <a href="https://github.com/guyujiezi/cicada"> 寒蝉 </a> 
- <a href="http://www.atool9.com/morse.php"> 中文摩斯 </a>
-      <p>Developed by <a href="https://www.douban.com/people/gardenia22/">
-      Gardenia</a></p>
-        </footer>      
+          文本已复制
+        </div>
+      </div>
+      <footer style="margin-top: 15px">
+        <p>推荐使用更方便稳定的<a href="https://www.tampermonkey.net/">
+          油猴</a> <a href="https://bit.ly/39uUAW5">豆瓣插件</a> by <a href="https://www.douban.com/people/MoNoMilky/">
+        竹子哟竹子✨ </a></p>
+        <p> 其他中文工具 <a href="http://mix.niin.cc/">混淆一下</a> <a href="https://github.com/guyujiezi/cicada"> 寒蝉 </a>
+        <a href="http://www.atool9.com/morse.php"> 中文摩斯 </a>
+        <p>Developed by <a href="https://www.douban.com/people/gardenia22/">
+        Gardenia</a></p>
+      </footer>
     </div>
   </body>
 </html>
