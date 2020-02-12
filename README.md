@@ -1,12 +1,4 @@
-## Deploying to Heroku
-
-```sh
-$ heroku create
-$ git push heroku master
-
-$ heroku open
-```
-or
+## Deploying to Heroku with one click
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
@@ -26,6 +18,15 @@ $ heroku local
 ```
 
 Your app should now be running on [localhost:5000](http://localhost:5000/).
+
+## Deploy to Heroku
+
+```sh
+$ heroku create
+$ git push heroku master
+
+$ heroku open
+```
 
 ## Documentation
 
